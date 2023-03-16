@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 
 using namespace std;;
@@ -24,12 +24,14 @@ public:
         cout << Who << ", " << Message;
     }
 
-    void changeSex(gender Sex) {
-        sex = Sex;
+    void changeSex() {
+        if (sex == male) sex = female;
+        else sex = male;
     }
 
-    void changeAge(int nowAge) {
-        age = nowAge;
+    void changeAge(int days) {
+        const int daysPerYear = 365;
+        age += days / daysPerYear;
     }
 };
 
@@ -38,9 +40,11 @@ int main()
     Human *Misha = new Human(60, 180, "Misha", "Russian", male, 24);
     Misha->say("Pasha", "Privet!");
 
-    Misha->changeSex(female);
+    Misha->changeSex();
+    cout << Misha->sex;
 
     Misha->changeAge(25);
-
+    
+    delete Misha;
     return 0;
 }
