@@ -75,5 +75,7 @@ int main() {
     Salers salers[2] = { *new Salers(0, "Havai"), *new Salers(1, "Charger")};
     Brands brands[2] = { *new Brands(0, "Food"), *new Brands(1, "Batareiki") };
     
-    for(int i = 0, i < 5)
+    for (int i = 0, i < 3, i++) {
+        cout << "Id = " << items[i]->productID << " Name: " << items[i]->name << " Categoty: " << category[items[i]->categoryID]->category << " Brand: " << brands[items[i]->brandID]->brand << " Saler: " << salers[items[i]->salerID]->saler << "\n";
+    }
 }
